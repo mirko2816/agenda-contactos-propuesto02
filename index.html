@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de Contactos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <p class="etiqueta">MI AGENDA</p>
+      <h1>Contactos</h1>
+      <p class="subtitulo">Guarda y consulta tus contactos facilmente.</p>
+    </header>
+
+    <section class="panel formulario-panel" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Nuevo contacto</h2>
+      <form id="contact-form">
+        <div class="campo">
+          <label for="name">Nombre completo</label>
+          <input id="name" name="name" type="text" placeholder="Ej. Ana Lopez" required>
+        </div>
+        <div class="campo">
+          <label for="phone">Numero de telefono</label>
+          <input id="phone" name="phone" type="tel" placeholder="Ej. 999 888 777" required>
+        </div>
+        <div class="campo">
+          <label for="email">Correo electronico</label>
+          <input id="email" name="email" type="email" placeholder="Ej. ana@correo.com" required>
+        </div>
+        <button class="boton boton-principal" type="submit">Agregar contacto</button>
+      </form>
+      <p id="form-message" class="mensaje" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="contenido-agenda" aria-labelledby="titulo-contactos">
+      <div class="barra-lista">
+        <div>
+          <h2 id="titulo-contactos">Mis contactos <span id="contact-count">0</span></h2>
+          <p class="texto-ayuda">Selecciona un contacto para ver sus datos.</p>
+        </div>
+        <label class="buscador">
+          <span class="texto-oculto">Buscar contactos</span>
+          <input id="search" type="search" placeholder="Buscar..." aria-label="Buscar contactos">
+        </label>
+      </div>
+
+      <div class="agenda-grid">
+        <div id="contact-list" class="lista-contactos" aria-live="polite"></div>
+        <aside id="contact-detail" class="panel detalle" aria-labelledby="detalle-titulo">
+          <p class="detalle-vacio">Aun no has seleccionado un contacto.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
